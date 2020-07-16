@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +35,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App {
+  margin: 60px 20% 60px 20%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* need one more column for Accuracy and Time. Will be seperate component*/
+  grid-template-rows: 150px 200px;
+  row-gap: 0.5px;
+  column-gap: 0.85px;
+  grid-template-areas: "mode-selects time wpm" "prompt prompt prompt";
+}
+
+.grid-item {
+  border-radius: 8px;
+  border: 3px solid black;
+}
+
+.grid-item-1 {
+  grid-area: mode-selects;
+}
+
+.grid-item-2 {
+  display: table;
+  grid-area: prompt;
+}
+
+.grid-item-3 {
+  grid-area: wpm;
+}
+
+.grid-item-4 {
+  white-space: pre;
+  grid-area: time;
 }
