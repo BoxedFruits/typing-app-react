@@ -49,14 +49,16 @@ class App extends Component {
       <div className="App">
         <div className="grid-container">
           <div className="grid-item grid-item-1">
-            <ModeSelector
-              modeSelected={this.state.mode}
-              onModeSelected={(mode) => this.handleMode(mode)}
-            />
-            <LanguageSelector
-              languageSelected={this.state.language}
-              onLanguageSelected={(arg) => this.handleLanguage(arg)}
-            />
+            <div id="modeLanguage">
+              <ModeSelector
+                modeSelected={this.state.mode}
+                onModeSelected={(mode) => this.handleMode(mode)}
+              />
+              <LanguageSelector
+                languageSelected={this.state.language}
+                onLanguageSelected={(arg) => this.handleLanguage(arg)}
+              />
+            </div>
           </div>
           {
             <InputChecker

@@ -3,8 +3,6 @@ import React, { Component } from "react";
 class TimeComponent extends Component {
   state = {
     timeString: "",
-    accString: "",
-    promptLength: this.props.promptLength,
   };
 
   calculateTime = () => {
@@ -21,29 +19,20 @@ class TimeComponent extends Component {
     });
   };
 
-  calculateAcc = () => {
-    let accString =
-      ((this.state.promptLength / this.props.keystrokes) * 100).toFixed(0) +
-      "%";
-    this.setState({
-      accString,
-    });
-    console.log((this.props.promptLength / this.props.keystrokes) * 100);
-    console.log(this.props.promptLength + " / " + this.props.keystrokes);
-  };
-  // not conditinoally rendering is proba the cause
   render() {
     return (
       <div className="grid-item grid-item-4">
-        <h1 className="accuracy">
-          Accuracy: {this.props.getAcc !== false ? this.props.acc : ""}
-        </h1>
-        <h1 className="time">
-          Time:{" "}
-          {this.props.getTime !== false
-            ? (this.props.onGetTime(), this.calculateTime())
-            : this.state.timeString}
-        </h1>
+        <div id="accTime">
+          <h1 className="accuracy">
+            Accuracy: {this.props.getAcc !== false ? this.props.acc : ""}
+          </h1>
+          <h1 className="time">
+            Time:{" "}
+            {this.props.getTime !== false
+              ? (this.props.onGetTime(), this.calculateTime())
+              : this.state.timeString}
+          </h1>
+        </div>
       </div>
     );
   }

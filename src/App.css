@@ -38,30 +38,57 @@
 }
 
 .App {
-  margin: 60px 20% 60px 20%;
+  margin: 60px 25% 60px 25%;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* need one more column for Accuracy and Time. Will be seperate component*/
   grid-template-rows: 150px 200px;
-  row-gap: 0.5px;
-  column-gap: 0.85px;
+  row-gap: 2px;
+  column-gap: 3px;
   grid-template-areas: "mode-selects time wpm" "prompt prompt prompt";
 }
 
+h1 {
+  margin-left: 3.5%;
+  margin-top: 5%;
+  margin-bottom: 0px;
+}
+
+h1#languageLabel,
+h1#modeLabel {
+  margin-top: 5%;
+  margin-bottom: 0px;
+}
+
+h1#accuracy {
+  margin-right: 10%;
+}
+
+select#languages,
+select#modeSelect {
+  margin-left: 3.5%;
+}
 .grid-item {
   border-radius: 8px;
+  box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.5);
   border: 3px solid black;
 }
 
 .grid-item-1 {
   grid-area: mode-selects;
+  background-image: url("mechKeyLogoReddit.png");
+  background-position-x: 2.9vh;
+  background-size: 0.4fr;
+  background-position-y: -1.6vh;
+  background-repeat: no-repeat;
 }
 
 .grid-item-2 {
   display: table;
   grid-area: prompt;
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .grid-item-3 {
@@ -71,4 +98,16 @@
 .grid-item-4 {
   white-space: pre;
   grid-area: time;
+}
+
+.prompt {
+  margin: 10px 3.5% 3.5% 1.5%;
+}
+
+#myInput {
+  margin-left: 5%;
+  margin-right: 2.5%;
+  margin-bottom: 2.5%;
+  width: 90%;
+  box-sizing: border-box;
 }

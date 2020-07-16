@@ -31,7 +31,7 @@ class GetWPM extends Component {
   render() {
     return (
       <div className="grid-item grid-item-3">
-        <h1 style={{ backgroundColor: "green" }}>
+        <h1 id="wpm">
           WPM:{" "}
           {this.props.getWPM !== false
             ? this.calculateWPM()

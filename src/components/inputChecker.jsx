@@ -46,28 +46,28 @@ class InputChecker extends Component {
       });
     } else if (this.state.stringPos === this.props.prompt[0].length) {
       //----------------------- The prompt is completed. Calculating the WPM and such. Resetting state -------------------------------------//
-      console.log("Completed the prompt. Bring new prompt and calculate WPM");
+      // console.log("Completed the prompt. Bring new prompt and calculate WPM");
+      // console.log(this.props.prompt[0].length, " ", this.state.keystrokes);
 
-      console.log(this.props.prompt[0].length, " ", this.state.keystrokes);
-      let acc =
-        ((this.props.prompt[0].length / this.state.keystrokes) * 100).toFixed(
-          0
-        ) + "%";
+      /* Calculating accuracy here because things get messy when passing the prompt as a prop to TimeComponent. The state and props
+         update while the calculation is being made in the component. This also helps cut down on how many props has to be passed down
+         to the time component */
       let lastPrompt = this.state.stringPos !== 0 ? this.props.prompt[0] : "";
+      let acc =
+        ((lastPrompt.length / this.state.keystrokes) * 100).toFixed(0) + "%";
       let timeTaken = new Date().getTime() - this.state.timeStarted;
-      //console.log(x - this.state.timeStarted, " Time taken");
+
       this.setState({
-        // typed: "",
         stringPos: 0,
         typedPos: 0,
         keystrokes: 0,
         getWPM: true,
         getTime: true,
+        getAcc: true,
         acc,
         lastPrompt,
-        getAcc: true,
-        wrongPos: null,
         timeTaken,
+        wrongPos: null,
       });
       this.props.onFinishedPrompt();
     } else {
@@ -118,26 +118,35 @@ class InputChecker extends Component {
 
   handleGetAcc = () => {
     this.setState({ getAcc: false, keystrokes: 0 });
-    console.log("here2");
+    console.log("here2!!!!!!!!!!!");
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     // Will fire when language is changed.
     // Might need to refactor because executing everytime input is taken
-    //console.log(prevProps.prompt, " <- previous prompt");
     if (prevProps.prompt[0] !== this.props.prompt[0]) {
-      this.setState({ typed: "", stringPos: 0, typedPos: 0, wrongPos: null });
+      this.setState({
+        typed: "",
+        stringPos: 0,
+        typedPos: 0,
+        keystrokes: 0,
+        getWPM: false,
+        getTime: false,
+        wrongPos: null,
+      });
+    }
+    if (this.props.prompt[0] === this.state.lastPrompt) {
+      // Edge case where if the prev and current prompt are the same, it will not reset the state
+      this.props.onFinishedPrompt();
     }
   }
   render() {
     //console.log("Input checker rendered");
     const { stringPos, wrongPos, typed } = this.state;
+    console.log(this.state.getAcc);
     return (
       <React.Fragment>
-        <div
-          className="grid-item grid-item-2"
-          style={{ backgroundColor: "lightblue" }}
-        >
+        <div className="grid-item grid-item-2">
           <div className="prompt">
             <span
               id="correctText"
@@ -174,6 +183,7 @@ class InputChecker extends Component {
             </span>
           </div>
           <input
+            id="myInput"
             type="text"
             name="typed"
             value={typed}
@@ -188,9 +198,7 @@ class InputChecker extends Component {
         ></GetWPM>
         <TimeComponent
           timeTaken={this.state.timeTaken}
-          keystrokes={this.state.keystrokes}
           acc={this.state.acc}
-          currPrompt={this.state.getAcc === false ? this.props.prompt[0] : ""}
           getAcc={this.state.getAcc}
           getTime={this.state.getTime}
           onGetTime={this.handleGetTime}
