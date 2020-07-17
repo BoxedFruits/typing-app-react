@@ -16,11 +16,6 @@
     ],
     ["The purpose of our lives is to be happy.", "Dalai Lama"]
   ],
-  "japanese": [
-    ["悪妻は百年の不作", "someone"],
-    ["花鳥風月", "someone2"],
-    ["花鳥風妻は", "someone3"]
-  ],
   "russian": [
     [
       "Точно произнесенное или написанное слово не может быть отрезано топором.",
@@ -31,5 +26,31 @@
       "Alexander Pushkin , Eugene Onegin"
     ],
     ["Мы все вышли из «шинели» Гоголя", "Fyodor Dostoyevsky"]
+  ],
+  "spanish": [
+    [
+      "No estudio para saber más, sino por ignorar menos.",
+      "Sor Juana Inés de la Cruz"
+    ],
+    [
+      "Siempre imaginé que el Paraíso sería algún tipo de biblioteca.",
+      "Jorge Luis Borges"
+    ],
+    [
+      "La sabiduría nos llega cuando ya no nos sirve de nada.",
+      " Gabriel García Márquez"
+    ],
+    ["Lee y conducirás, no leas y serás conducido.", "Santa Teresa de Jesús"],
+    [
+      "Ir y quedarse, y con quedar partirse, partir sin alma, y ir con alma ajena, oír la dulce voz de una sirena y no poder del árbol desasirse",
+      "Lope de Vega"
+    ],
+    [
+      "Noche no hay si me hablas por la noche. Ni soledad, aquí solo en mi cuarto si tu voz llega, tan sin cuerpo, leve.",
+      "Pedro Salinas"
+    ]
+  ],
+  "high Valyrian": [
+    ["Skorverdon dekuroti Dōros hen kesīr ilza?", "Game of Thrones"]
   ]
 }

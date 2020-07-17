@@ -186,6 +186,7 @@ class InputChecker extends Component {
             id="myInput"
             type="text"
             name="typed"
+            placeholder="Start typing here to measure your Words Per Minute."
             value={typed}
             onInput={(e) => this.handleChange(e)}
           />

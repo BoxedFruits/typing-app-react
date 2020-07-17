@@ -72,8 +72,8 @@ select#modeSelect {
 }
 .grid-item {
   border-radius: 8px;
-  box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.5);
-  border: 3px solid black;
+  box-shadow: 3px 1px 4px rgba(0, 0, 0, 0.5);
+  border: 1.5px solid black;
 }
 
 .grid-item-1 {
@@ -88,7 +88,7 @@ select#modeSelect {
 .grid-item-2 {
   display: table;
   grid-area: prompt;
-  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.5);
 }
 
 .grid-item-3 {
