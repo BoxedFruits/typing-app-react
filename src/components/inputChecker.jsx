@@ -147,12 +147,12 @@ class InputChecker extends Component {
     return (
       <React.Fragment>
         <div className="grid-item grid-item-2">
-          <div className="prompt">
+          <div id="prompt">
             <span
               id="correctText"
               className={this.initTextColor()}
               style={{
-                fontSize: 46,
+                fontSize: 26,
                 backgroundColor: "rgba(100, 239, 146, 0.32)",
               }}
             >
@@ -161,7 +161,7 @@ class InputChecker extends Component {
             <span
               id="wrongText"
               style={{
-                fontSize: 46,
+                fontSize: 26,
                 backgroundColor: "rgba(255, 42, 110, 0.39)",
               }}
               className="text-danger"
@@ -170,7 +170,7 @@ class InputChecker extends Component {
                 ? this.props.prompt[0].substring(stringPos, wrongPos)
                 : ""}
             </span>
-            <span id="remaningText" style={{ fontSize: 46 }}>
+            <span id="remaningText" style={{ fontSize: 26 }}>
               {wrongPos !== null
                 ? this.props.prompt[0].substring(
                     wrongPos,
@@ -182,6 +182,7 @@ class InputChecker extends Component {
                   )}
             </span>
           </div>
+          <div id="author">- {this.props.prompt[1]}</div>
           <input
             id="myInput"
             type="text"

@@ -5,7 +5,7 @@ import LanguageSelector from "./components/languageSelector";
 import ModeSelector from "./components/modeSelector";
 import styled from "styled-components";
 import sentencePrompts from "./prompts/sentencePrompts.json";
-//import paragraphPrompts from "./prompts/paragraphPrompts.json"; //Need to get prompts for paragraphs
+import paragraphPrompts from "./prompts/paragraphPrompts.json"; //Need to get prompts for paragraphs
 
 class App extends Component {
   state = {
@@ -22,22 +22,28 @@ class App extends Component {
   };
 
   generatePrompt = () => {
-    /* let mode; //This is just a quick mock-up of what it could look like. Copying the array wastes a ton of space 
-    if(mode == "sentence"){
-      mode = sentencePrompts; //Spread operator?
-    }else{mode = pararaphPrompts} //Need to use mode instead of sentence prompts.
-     */
+    let mode; //This is just a quick fix. Copying the array wastes space but this will reduce lines of code.
+    console.log(this.state.mode);
+    if (this.state.mode === "sentence") {
+      mode = sentencePrompts;
+    } else if (this.state.mode === "paragraph") {
+      mode = paragraphPrompts;
+    }
+
     const language = this.state.language;
 
-    let max = sentencePrompts[language].length;
+    let max = mode[language].length;
     let min = 0;
     var randIndex = Math.floor(Math.random() * (max - min)) + min;
 
-    this.setState({ prompt: sentencePrompts[language][randIndex] });
+    this.setState({ prompt: mode[language][randIndex] });
   };
 
   handleMode = (mode) => {
-    this.setState({ mode }, this.generatePrompt());
+    this.setState({ mode }, () => {
+      this.generatePrompt();
+      console.log(mode + " <-- mode", this.state.mode);
+    });
   };
   componentDidMount() {
     this.generatePrompt();

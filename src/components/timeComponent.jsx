@@ -23,10 +23,10 @@ class TimeComponent extends Component {
     return (
       <div className="grid-item grid-item-4">
         <div id="accTime">
-          <h1 className="accuracy">
+          <h1 id="accuracy">
             Accuracy: {this.props.getAcc !== false ? this.props.acc : ""}
           </h1>
-          <h1 className="time">
+          <h1 id="time">
             Time:{" "}
             {this.props.getTime !== false
               ? (this.props.onGetTime(), this.calculateTime())

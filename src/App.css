@@ -100,8 +100,13 @@ select#modeSelect {
   grid-area: time;
 }
 
-.prompt {
-  margin: 10px 3.5% 3.5% 1.5%;
+#prompt {
+  margin: 10px 1.5% 0px 1.5%;
+}
+#author {
+  margin: 0px 5.5% 8px 1.5%;
+  float: right;
+  opacity: 0.85;
 }
 
 #myInput {
@@ -110,4 +115,86 @@ select#modeSelect {
   margin-bottom: 2.5%;
   width: 90%;
   box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1700px) {
+  h1#wpm {
+    font-size: 30px;
+  }
+
+  h1#accuracy,
+  h1#time {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  h1#wpm {
+    font-size: 4vw;
+  }
+
+  h1#accuracy,
+  h1#time {
+    font-size: 26px;
+    white-space: pre-line;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  /* .grid-item-1,
+  .grid-item-3,
+  .grid-item-4 {
+    height: 12vw;
+  }
+
+  h1#accuracy,
+  h1#time {
+    font-size: 2.4vw;
+    white-space: pre-line;
+  } */
+
+  .App {
+    margin: 60px 5% 60px 5%;
+  }
+  h1#wpm {
+    font-size: 30px;
+  }
+  h1#accuracy,
+  h1#time {
+    font-size: 26px;
+    white-space: none;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 75px 75px 200px;
+    grid-template-areas: "mode-selects mode-selects mode-selects" "time time wpm" "prompt prompt prompt";
+  }
+
+  #modeLanguage {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 715px) {
+  h1#accuracy,
+  h1#time {
+    font-size: 26px;
+    white-space: none;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 75px 75px 200px;
+    grid-template-areas: "mode-selects mode-selects mode-selects" "time time wpm" "prompt prompt prompt";
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #prompt {
+    font-size: 18px;
+  }
+  #author {
+    font-size: 13px;
+  }
 }

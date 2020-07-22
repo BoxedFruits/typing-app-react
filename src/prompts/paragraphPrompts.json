@@ -1,15 +1,47 @@
 {
   "english": [
-    { "It do be like it do": "Albert Einstein" },
-    { "Lorem Dispeum My dude": "user" }
+    [
+      "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They're not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can't do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius.",
+      "Rob Siltanen"
+    ],
+    [
+      "Only once in your life, I truly believe, you find someone who can completely turn your world around. You tell them things that you’ve never shared with another soul and they absorb everything you say and actually want to hear more. You share hopes for the future, dreams that will never come true, goals that were never achieved and the many disappointments life has thrown at you.",
+      "Bob Marley"
+    ],
+    [
+      "Spendin' all my nights alone, waitin' for you to call me. You're the only one I want by my side when I fall asleep. Tell me what I'm waitin' for.",
+      "BROCKHAMPTON"
+    ],
+    [
+      "I know you're somewhere, somewhere. I've been trapped in my mind, girl, just holdin' on. I don't wanna pretend we're somethin', we're nothin'. I've been stuck thinkin' 'bout her, I can't hold on.",
+      "xxxtentacion"
+    ],
+    [
+      "You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose. You're on your own. And you know what you know. And YOU are the one who'll decide where to go...",
+      "Dr. Seuss, Oh, the Places You'll Go!"
+    ],
+    [
+      "This life is what you make it. No matter what, you're going to mess up sometimes, it's a universal truth. But the good part is you get to decide how you're going to mess it up. Girls will be your friends - they'll act like it anyway. But just remember, some come, some go. The ones that stay with you through everything - they're your true best friends. Don't let go of them.",
+      "Marilyn Monroe"
+    ],
+    [
+      "O Captain! my Captain! our fearful trip is done, The ship has weather’d every rack, the prize we sought is won, The port is near, the bells I hear, the people all exulting, While follow eyes the steady keel, the vessel grim and daring; But O heart! heart! heart!",
+      "Walt Whitman"
+    ]
   ],
   "russian": [
-    {
-      "Точно произнесенное или написанное слово не может быть отрезано топором.": "Nikolai Gogol, Dead Souls"
-    },
-    {
-      "депрессия все еще охраняла его и преследовала его, как тень - или как верный жен": "Alexander Pushkin , Eugene Onegin"
-    },
-    { "Мы все вышли из «шинели» Гоголя": "Fyodor Dostoyevsky" }
+    [
+      "Попрыгунья Стрекоза Лето красное пропела; Оглянуться не успела, Как зима катит в глаза. Помертвело чисто поле; Нет уж дней тех светлых боле, Как под каждым ей листком",
+      "Ivan Krylov’s,Стрекоза и муравей"
+    ]
+  ],
+  "spanish": [
+    [
+      "No estudio para saber más, sino por ignorar menos.",
+      "Sor Juana Inés de la Cruz"
+    ]
+  ],
+  "high Valyrian": [
+    ["Skorverdon dekuroti Dōros hen kesīr ilza?", "Game of Thrones"]
   ]
 }
