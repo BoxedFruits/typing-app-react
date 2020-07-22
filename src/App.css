@@ -141,18 +141,6 @@ select#modeSelect {
 }
 
 @media only screen and (max-width: 900px) {
-  /* .grid-item-1,
-  .grid-item-3,
-  .grid-item-4 {
-    height: 12vw;
-  }
-
-  h1#accuracy,
-  h1#time {
-    font-size: 2.4vw;
-    white-space: pre-line;
-  } */
-
   .App {
     margin: 60px 5% 60px 5%;
   }
@@ -164,21 +152,12 @@ select#modeSelect {
     font-size: 26px;
     white-space: none;
   }
-
-  /* .grid-container {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 75px 75px 200px;
-    grid-template-areas: "mode-selects mode-selects mode-selects" "time time wpm" "prompt prompt prompt";
-  } */
-
-  /* #modeLanguage {
-    display: flex;
-  } */
 }
 
 @media only screen and (max-width: 715px) {
   h1#accuracy,
   h1#time {
+    margin-top: 0%;
     font-size: 26px;
     white-space: none;
   }
