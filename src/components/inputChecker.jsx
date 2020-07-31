@@ -28,12 +28,19 @@ class InputChecker extends Component {
       let stringPos = this.state.stringPos + 1;
       let typedPos = this.state.typedPos + 1;
       let keystrokes = this.state.keystrokes + 1;
-      this.setState({
-        stringPos,
-        typedPos,
-        keystrokes,
-        wrongPos: null,
-      });
+      this.setState(
+        {
+          stringPos,
+          typedPos,
+          keystrokes,
+          wrongPos: null,
+        },
+        () => {
+          if (this.state.stringPos === this.props.prompt[0].length) {
+            this.completedPrompt();
+          }
+        }
+      );
     } else if (event.target.value.length < this.state.typedPos) {
       //Handles backspacing
       let stringPos = this.state.stringPos - 1;
@@ -44,32 +51,6 @@ class InputChecker extends Component {
         typedPos,
         wrongPos: null,
       });
-    } else if (this.state.stringPos === this.props.prompt[0].length) {
-      //----------------------- The prompt is completed. Calculating the WPM and such. Resetting state -------------------------------------//
-      // console.log("Completed the prompt. Bring new prompt and calculate WPM");
-      // console.log(this.props.prompt[0].length, " ", this.state.keystrokes);
-
-      /* Calculating accuracy here because things get messy when passing the prompt as a prop to TimeComponent. The state and props
-         update while the calculation is being made in the component. This also helps cut down on how many props has to be passed down
-         to the time component */
-      let lastPrompt = this.state.stringPos !== 0 ? this.props.prompt[0] : "";
-      let acc =
-        ((lastPrompt.length / this.state.keystrokes) * 100).toFixed(0) + "%";
-      let timeTaken = new Date().getTime() - this.state.timeStarted;
-
-      this.setState({
-        stringPos: 0,
-        typedPos: 0,
-        keystrokes: 0,
-        getWPM: true,
-        getTime: true,
-        getAcc: true,
-        acc,
-        lastPrompt,
-        timeTaken,
-        wrongPos: null,
-      });
-      this.props.onFinishedPrompt();
     } else {
       //Handles wrong input
       let wrongPos =
@@ -103,6 +84,28 @@ class InputChecker extends Component {
     }
   };
 
+  completedPrompt() {
+    let lastPrompt = this.state.stringPos !== 0 ? this.props.prompt[0] : "";
+    let acc =
+      ((lastPrompt.length / this.state.keystrokes) * 100).toFixed(0) + "%";
+    let timeTaken = new Date().getTime() - this.state.timeStarted;
+
+    this.setState({
+      stringPos: 0,
+      typedPos: 0,
+      keystrokes: 0,
+      getWPM: true,
+      getTime: true,
+      getAcc: true,
+      typed: "",
+      acc,
+      lastPrompt,
+      timeTaken,
+      wrongPos: null,
+    });
+    this.props.onFinishedPrompt();
+  }
+
   initTextColor() {
     return this.state.stringPos === 0 ? "text-dark" : "text-success";
   }
@@ -118,7 +121,7 @@ class InputChecker extends Component {
 
   handleGetAcc = () => {
     this.setState({ getAcc: false, keystrokes: 0 });
-    console.log("here2!!!!!!!!!!!");
+    //console.log("here2!!!!!!!!!!!");
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -135,15 +138,16 @@ class InputChecker extends Component {
         wrongPos: null,
       });
     }
-    if (this.props.prompt[0] === this.state.lastPrompt) {
-      // Edge case where if the prev and current prompt are the same, it will not reset the state
-      this.props.onFinishedPrompt();
-    }
+    // if (this.props.prompt[0] === this.state.lastPrompt) {
+    //   console.log("SAME PROMPT");
+    //   // Edge case where if the prev and current prompt are the same, it will not reset the state
+    //   this.props.onFinishedPrompt();
+    // }
   }
+
   render() {
-    //console.log("Input checker rendered");
     const { stringPos, wrongPos, typed } = this.state;
-    console.log(this.state.getAcc);
+    //console.log(this.state.getAcc);
     return (
       <React.Fragment>
         <div className="grid-item grid-item-2">
@@ -185,6 +189,7 @@ class InputChecker extends Component {
           <div id="author">- {this.props.prompt[1]}</div>
           <input
             id="myInput"
+            autoFocus
             type="text"
             name="typed"
             placeholder="Start typing here to measure your Words Per Minute."

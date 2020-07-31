@@ -109,6 +109,16 @@ select#modeSelect {
   opacity: 0.85;
 }
 
+#resetButton {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 3px 1px 4px rgba(0, 0, 0, 0.5);
+  border: 1.45px solid black;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  float: right;
+}
+
 #myInput {
   margin-left: 5%;
   margin-right: 2.5%;
