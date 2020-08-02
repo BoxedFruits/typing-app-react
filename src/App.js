@@ -95,8 +95,10 @@ class App extends Component {
             prompt={this.state.prompt}
             onFinishedPrompt={this.generatePrompt}
           />
-          <p classname="grid-item grid-item-5">123</p>
         </div>
+        <p id="hint">
+          Tip: Press Escape while focused on the input area to reset
+        </p>
       </div>
     );
   }

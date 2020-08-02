@@ -44,10 +44,10 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* need one more column for Accuracy and Time. Will be seperate component*/
-  grid-template-rows: 150px 200px;
+  grid-template-rows: 150px flex;
   row-gap: 2px;
   column-gap: 3px;
-  grid-template-areas: "mode-selects time wpm" "prompt prompt prompt";
+  grid-template-areas: "mode-selects time wpm" "prompt prompt prompt" "hint hint hint";
 }
 
 h1 {
@@ -78,6 +78,7 @@ select#modeSelect {
 
 .grid-item-1 {
   grid-area: mode-selects;
+  padding-bottom: 10px;
   background-image: url("mechKeyLogoReddit.png");
   background-position-x: 2.9vh;
   background-size: 0.4fr;
@@ -127,6 +128,12 @@ select#modeSelect {
   box-sizing: border-box;
 }
 
+#hint {
+  margin-left: 2%;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 @media only screen and (max-width: 1700px) {
   h1#wpm {
     font-size: 30px;
@@ -140,7 +147,7 @@ select#modeSelect {
 
 @media only screen and (max-width: 1450px) {
   h1#wpm {
-    font-size: 4vw;
+    font-size: 3.8vw;
   }
 
   h1#accuracy,
@@ -180,10 +187,14 @@ select#modeSelect {
   #author {
     font-size: 12px;
   }
+  .grid-item-1 {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
 
   .grid-container {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 75px 200px;
+    grid-template-rows: auto 75px flex;
     grid-template-areas: "mode-selects mode-selects mode-selects" "time time wpm" "prompt prompt prompt";
     min-width: 430px;
   }
