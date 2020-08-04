@@ -31,17 +31,29 @@
   ],
   "russian": [
     [
-      "Попрыгунья Стрекоза Лето красное пропела; Оглянуться не успела, Как зима катит в глаза. Помертвело чисто поле; Нет уж дней тех светлых боле, Как под каждым ей листком",
+      "Попрыгунья Стрекоза Лето красное пропела; Оглянуться не успела, Как зима катит в глаза.",
       "Ivan Krylov’s,Стрекоза и муравей"
+    ],
+    [
+      " Попрыгунья Стрекоза Лето красное пропела; Оглянуться не успела, Как зима катит в глаза. Помертвело чисто поле; Нет уж дней тех светлых боле, Как под каждым ей листком",
+      "Ivan Krylov’s,Стрекоза и муравей2"
     ]
   ],
   "spanish": [
     [
       "No estudio para saber más, sino por ignorar menos.",
       "Sor Juana Inés de la Cruz"
+    ],
+    [
+      "No estudio para saber más, sino por ignorar menos.No estudio para saber más, sino por ignorar menos.",
+      "Sor Juana Inés de la Cruz2"
     ]
   ],
   "high Valyrian": [
-    ["Skorverdon dekuroti Dōros hen kesīr ilza?", "Game of Thrones"]
+    ["Skorverdon dekuroti Dōros hen kesīr ilza?", "Game of Thrones"],
+    [
+      "Skorverdon dekuroti Dōros hen kesīr ilza?Skorverdon dekuroti Dōros hen kesīr ilza?",
+      "Game of Thrones2"
+    ]
   ]
 }
