@@ -1,6 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-https://typing-app-react.herokuapp.com/
+A small project to your the Words Per Minute and to learn React
+
+https://typing-app-react-8lkz-boxedfruits.vercel.app/
+
+![image](https://github.com/BoxedFruits/typing-app-react/assets/34636700/90c72e5d-b692-4d31-b57e-07f0a0a7d2fb)
+
 
 ## Available Scripts
 
