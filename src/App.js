@@ -77,6 +77,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" onKeyDown={(event) => this.resetPrompt(event)}>
+        Typing App
         <ResetButton onResetPrompt={this.generatePrompt}></ResetButton>
         <div className="grid-container">
           <div className="grid-item grid-item-1">
